@@ -24,19 +24,19 @@ export const Header = () => {
             <Link to="/introduction/hello">팜스토리소개</Link>
           </li>
           <li>
-            <a href="./market/list.html">
+            <Link to="/market/list">
               <img src="/images/head_menu_badge.png" alt="30%" />
               장보기
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="./croptalk/story.html">농작물이야기</a>
+            <Link to="/croptalk/story">농작물이야기</Link>
           </li>
           <li>
-            <a href="./event/event.html">이벤트</a>
+            <Link to="/event/info">이벤트</Link>
           </li>
           <li>
-            <a href="./community/notice.html">커뮤니티</a>
+            <Link to="/community/notice">커뮤니티</Link>
           </li>
         </ul>
       </header>

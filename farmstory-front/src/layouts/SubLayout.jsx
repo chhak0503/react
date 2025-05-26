@@ -11,9 +11,9 @@ export const SubLayout = ({ children }) => {
   return (
     <div id="sub">
       <div>
-        <img src="../images/sub_top_tit1.png" alt="INTRODUCTION" />
+        <img src={`/images/sub_top_${cate1}.png`} alt={`${cate1}`} />
       </div>
-      <section class="introduction">
+      <section className={`${cate1}`}>
         <Aside />
         <article>
           <nav>
