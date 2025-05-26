@@ -7,17 +7,11 @@ import { Quick } from "../components/main/Quick";
 import { Latest } from "../components/main/Latest";
 import { Info } from "../components/main/Info";
 
-export const MainLayout = () => {
+export const MainLayout = ({ children }) => {
   return (
     <div id="container">
       <Header />
-      <main>
-        <Slider />
-        <Best />
-        <Quick />
-        <Latest />
-        <Info />
-      </main>
+      <main>{children}</main>
       <Footer />
     </div>
   );

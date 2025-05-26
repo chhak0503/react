@@ -3,6 +3,8 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./styles/App.scss";
 import { MainLayout } from "./layouts/MainLayout";
+import { RouterProvider } from "react-router-dom";
+import router from "./routers/router";
 
 /*
 npm add react-router-dom
@@ -11,8 +13,9 @@ npm add axios
 npm install react-cookie
 npm install sass
 */
+
 function App() {
-  return <MainLayout />;
+  return <RouterProvider router={router} />;
 }
 
 export default App;

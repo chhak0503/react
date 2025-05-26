@@ -1,10 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
+import { MainPage } from "../pages/main/MainPage";
+import { HelloPage } from "../pages/introduction/HelloPage";
 
 // 라우터 생성
 const router = createBrowserRouter([
-  { path: "/", element: null },
-  { path: "/introuduction/hello", element: null },
-  { path: "/introuduction/direction", element: null },
+  { path: "/", element: <MainPage /> },
+  { path: "/introduction/hello", element: <HelloPage /> },
+  { path: "/introduction/direction", element: null },
   { path: "/market/list", element: null },
   { path: "/croptalk/story", element: null },
   { path: "/croptalk/grow", element: null },
