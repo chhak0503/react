@@ -30,13 +30,15 @@ export const Header = () => {
             </Link>
           </li>
           <li>
-            <Link to="/croptalk/story">농작물이야기</Link>
+            <Link to="/board/list?cate1=croptalk&cate2=story">
+              농작물이야기
+            </Link>
           </li>
           <li>
-            <Link to="/event/info">이벤트</Link>
+            <Link to="/board/list?cate1=event&cate2=info">이벤트</Link>
           </li>
           <li>
-            <Link to="/community/notice">커뮤니티</Link>
+            <Link to="/board/list?cate1=community&cate2=notice">커뮤니티</Link>
           </li>
         </ul>
       </header>
