@@ -18,9 +18,12 @@ import { RegisterPage } from "../pages/user/RegisterPage";
 import { AdminMainPage } from "../pages/admin/AdminMainPage";
 import { lazy, Suspense } from "react";
 
-const AdminProductRegisterPage = lazy(() =>
-  import("../pages/admin/product/RegisterPage")
-);
+// prettier-ignore
+const AdminProductRegisterPage = lazy(() =>  import("../pages/admin/product/RegisterPage"));
+const BoardListPage = lazy(() => import("../pages/board/ListPage"));
+const BoardWritePage = lazy(() => import("../pages/board/WritePage"));
+const BoardViewPage = lazy(() => import("../pages/board/ViewPage"));
+const BoardModifyPage = lazy(() => import("../pages/board/ModifyPage"));
 
 // 라우터 생성
 const router = createBrowserRouter([
@@ -48,10 +51,10 @@ const router = createBrowserRouter([
   { path: "/user/register", element: <RegisterPage /> },
   { path: "/user/logout", element: null },
 
-  { path: "/board/list", element: null },
-  { path: "/board/write", element: null },
-  { path: "/board/view", element: null },
-  { path: "/board/modify", element: null },
+  { path: "/board/list", element: <BoardListPage /> },
+  { path: "/board/write", element: <BoardWritePage /> },
+  { path: "/board/view", element: <BoardViewPage /> },
+  { path: "/board/modify", element: <BoardModifyPage /> },
 
   { path: "/admin", element: <AdminMainPage /> },
   {
