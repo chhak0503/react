@@ -6,12 +6,18 @@ export const Terms = () => {
   const [privacyText, setPrivacyText] = useState("");
 
   useEffect(() => {
-    const data = getTerms();
+    const fetchData = async () => {
+      try {
+        const data = await getTerms();
 
-    console.log(data);
+        setTermsText(data.terms);
+        setPrivacyText(data.privacy);
+      } catch (err) {
+        console.error(err);
+      }
+    };
 
-    setTermsText(data.terms);
-    setPrivacyText(data.privacy);
+    fetchData();
   }, []);
 
   return (
