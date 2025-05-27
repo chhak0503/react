@@ -15,6 +15,7 @@ import { FaqPage } from "../pages/community/FaqPage";
 import { LoginPage } from "../pages/user/LoginPage";
 import { TermsPage } from "../pages/user/TermsPage";
 import { RegisterPage } from "../pages/user/RegisterPage";
+import { AdminMainPage } from "../pages/admin/AdminMainPage";
 
 // 라우터 생성
 const router = createBrowserRouter([
@@ -47,7 +48,7 @@ const router = createBrowserRouter([
   { path: "/board/view", element: null },
   { path: "/board/modify", element: null },
 
-  { path: "/admin", element: null },
+  { path: "/admin", element: <AdminMainPage /> },
   { path: "/admin/product/register", element: null },
 ]);
 
