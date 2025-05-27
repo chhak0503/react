@@ -12,6 +12,9 @@ import { MenuPage } from "../pages/community/MenuPage";
 import { ChefPage } from "../pages/community/ChefPage";
 import { QnaPage } from "../pages/community/QnaPage";
 import { FaqPage } from "../pages/community/FaqPage";
+import { LoginPage } from "../pages/user/LoginPage";
+import { TermsPage } from "../pages/user/TermsPage";
+import { RegisterPage } from "../pages/user/RegisterPage";
 
 // 라우터 생성
 const router = createBrowserRouter([
@@ -34,9 +37,9 @@ const router = createBrowserRouter([
   { path: "/community/qna", element: <QnaPage /> },
   { path: "/community/faq", element: <FaqPage /> },
 
-  { path: "/user/login", element: null },
-  { path: "/user/terms", element: null },
-  { path: "/user/register", element: null },
+  { path: "/user/login", element: <LoginPage /> },
+  { path: "/user/terms", element: <TermsPage /> },
+  { path: "/user/register", element: <RegisterPage /> },
   { path: "/user/logout", element: null },
 
   { path: "/board/list", element: null },

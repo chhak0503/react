@@ -10,8 +10,8 @@ export const Header = () => {
         </Link>
         <p>
           <Link to="/">HOME |</Link>
-          <a href="./user/login.html">로그인 |</a>
-          <a href="./user/terms.html">회원가입 |</a>
+          <Link to="/user/login">로그인 |</Link>
+          <Link to="/user/terms">회원가입 |</Link>
           <a href="./myinfo/cart.html">나의정보 |</a>
           <a href="#">로그아웃 |</a>
           <a href="./admin/">관리자 |</a>
