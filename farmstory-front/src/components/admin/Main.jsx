@@ -1,40 +1,10 @@
 import React from "react";
+import { Aside } from "./Aside";
 
 export const Main = () => {
   return (
     <main>
-      <aside>
-        <h3>주요기능</h3>
-        <ul className="lnb">
-          <li>
-            <span>상품관리</span>
-            <ol>
-              <li>
-                <a href="./product/list.html">상품목록</a>
-              </li>
-              <li>
-                <a href="./product/register.html">상품등록</a>
-              </li>
-            </ol>
-          </li>
-          <li>
-            <span>주문관리</span>
-            <ol>
-              <li>
-                <a href="./order/list.html">주문목록</a>
-              </li>
-            </ol>
-          </li>
-          <li>
-            <span>회원관리</span>
-            <ol>
-              <li>
-                <a href="./user/list.html">회원목록</a>
-              </li>
-            </ol>
-          </li>
-        </ul>
-      </aside>
+      <Aside />
       <section>
         <nav>
           <h3>관리자 메인</h3>

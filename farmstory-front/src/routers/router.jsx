@@ -16,6 +16,11 @@ import { LoginPage } from "../pages/user/LoginPage";
 import { TermsPage } from "../pages/user/TermsPage";
 import { RegisterPage } from "../pages/user/RegisterPage";
 import { AdminMainPage } from "../pages/admin/AdminMainPage";
+import { lazy, Suspense } from "react";
+
+const AdminProductRegisterPage = lazy(() =>
+  import("../pages/admin/product/RegisterPage")
+);
 
 // 라우터 생성
 const router = createBrowserRouter([
@@ -49,7 +54,14 @@ const router = createBrowserRouter([
   { path: "/board/modify", element: null },
 
   { path: "/admin", element: <AdminMainPage /> },
-  { path: "/admin/product/register", element: null },
+  {
+    path: "/admin/product/register",
+    element: (
+      <Suspense>
+        <AdminProductRegisterPage />
+      </Suspense>
+    ),
+  },
 ]);
 
 // 라우터 내보내기

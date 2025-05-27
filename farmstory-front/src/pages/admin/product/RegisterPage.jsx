@@ -1,5 +1,13 @@
 import React from "react";
+import { AdminLayout } from "../../../layouts/AdminLayout";
+import { Register } from "../../../components/admin/product/Register";
 
-export const RegisterPage = () => {
-  return <div>RegisterPage</div>;
+const RegisterPage = () => {
+  return (
+    <AdminLayout>
+      <Register />
+    </AdminLayout>
+  );
 };
+
+export default RegisterPage;

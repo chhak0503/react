@@ -1,11 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   return (
     <header>
-      <a href="./index.html" className="logo">
+      <Link to="/admin" className="logo">
         <img src="/images/admin_logo.jpg" alt="로고" />
-      </a>
+      </Link>
       <p>
         <a href="/">HOME |</a>
         <a href="#">로그아웃 |</a>
