@@ -23,7 +23,9 @@ export const postUser = async (data) => {
 
 export const postUserLogin = async (data) => {
   try {
-    const response = await axios.post(`${USER_LOGIN}`, data);
+    const response = await axios.post(`${USER_LOGIN}`, data, {
+      withCredentials: true,
+    });
     console.log(response);
     return response.data;
   } catch (err) {

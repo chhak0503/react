@@ -1,5 +1,8 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { postUserLogin } from "../../api/userAPI";
+import { login } from "../../slices/loginSlice";
+import { useNavigate } from "react-router-dom";
 
 const initState = {
   uid: "",
@@ -8,6 +11,11 @@ const initState = {
 
 export const Login = () => {
   const [user, setUser] = useState({ ...initState });
+
+  const navigate = useNavigate();
+
+  // 리덕스 스토어 dispatch
+  const dispatch = useDispatch();
 
   // 핸들러
   const changeHandler = (e) => {
@@ -21,8 +29,17 @@ export const Login = () => {
     // 서버 요청 정의
     const fetchData = async () => {
       try {
+        // 로그인
         const data = await postUserLogin(user);
         console.log(data);
+
+        if (data.username) {
+          // redux login 호출
+          dispatch(login(data));
+
+          // 메인 이동(컴포넌트 라우팅)
+          navigate("/");
+        }
       } catch (err) {
         console.error(err);
       }
