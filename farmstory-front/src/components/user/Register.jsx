@@ -39,7 +39,7 @@ export const Register = () => {
 
         alert("등록 완료");
 
-        // 로그인 이동(컴포넌트 전환)
+        // 로그인 이동(컴포넌트 라우팅)
         navigate("/user/login");
       } catch (err) {
         console.error(err);
