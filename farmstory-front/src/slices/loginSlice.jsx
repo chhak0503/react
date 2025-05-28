@@ -27,8 +27,10 @@ const loginSlice = createSlice({
 
       // 쿠키 삭제
       Cookies.remove("username");
-      Cookies.remove("access_token");
-      Cookies.remove("refresh_token");
+
+      // HttpOnly 쿠키는 자바스크립트 처리 안됨
+      //Cookies.remove("access_token");
+      //Cookies.remove("refresh_token");
     },
   },
 });

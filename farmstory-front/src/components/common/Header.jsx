@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { logout } from "../../slices/loginSlice";
+import { getUserLogout } from "../../api/userAPI";
 
 export const Header = () => {
   const navigate = useNavigate();
@@ -14,6 +15,19 @@ export const Header = () => {
 
   // 로그아웃
   const logoutHandler = () => {
+    // 로그아웃 서버 요청
+    const fetchData = async () => {
+      try {
+        const data = await getUserLogout();
+        console.log(data);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    // 호출
+    fetchData();
+
     // 로그아웃 처리
     dispatch(logout());
 
