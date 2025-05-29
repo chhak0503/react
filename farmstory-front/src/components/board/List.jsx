@@ -1,6 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import useCates from "../../hooks/useCates";
 
 const List = () => {
+  const [cate1, cate2] = useCates();
+
   return (
     <div id="board">
       <section className="list">
@@ -52,9 +56,12 @@ const List = () => {
           </a>
         </div>
 
-        <a href="./write.html" class="btn btnWrite">
+        <Link
+          to={`/board/write?cate1=${cate1}&cate2=${cate2}`}
+          class="btn btnWrite"
+        >
           글쓰기
-        </a>
+        </Link>
       </section>
     </div>
   );
