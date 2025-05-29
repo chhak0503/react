@@ -1,9 +1,11 @@
 import axios from "axios";
-import { ARTICLE_WRITE } from "./_http";
+import { ARTICLE_LIST, ARTICLE_WRITE } from "./_http";
 
-export const getArticle = async () => {
+export const getArticleAll = async (pg, cate) => {
   try {
-    const response = await axios.get(``);
+    const response = await axios.get(`${ARTICLE_LIST}?pg=${pg}&cate=${cate}`, {
+      withCredentials: true,
+    });
     console.log(response);
     return response.data;
   } catch (err) {
@@ -14,7 +16,7 @@ export const getArticle = async () => {
 export const postArticle = async (data) => {
   try {
     const response = await axios.post(`${ARTICLE_WRITE}`, data, {
-      withCredentials: true, // true로 해야 CORS 환경에서 쿠키값 전송
+      withCredentials: true, // 브라우저에서 쿠키, 인증 헤더, TLS 인증서 등의 자격 증명을 요청에 포함하도록 설정하는 옵션
     });
     console.log(response);
     return response.data;

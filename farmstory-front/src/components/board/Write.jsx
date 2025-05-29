@@ -1,10 +1,11 @@
 import React, { use, useState } from "react";
 import useAuth from "../../hooks/useAuth";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import useCates from "../../hooks/useCates";
 import { postArticle } from "../../api/articleAPI";
 
 const Write = () => {
+  const navigate = useNavigate();
   const [cate1, cate2] = useCates();
   const { username } = useAuth();
 
@@ -34,9 +35,12 @@ const Write = () => {
     // 서버 요청 정의
     const fetchData = async () => {
       try {
-        // 로그인
+        // 글 등록 요청
         const data = await postArticle(article);
         console.log(data);
+
+        // 글 목록 이동
+        navigate(`/board/list?cate1=${cate1}&cate2=${cate2}`);
       } catch (err) {
         console.error(err);
       }

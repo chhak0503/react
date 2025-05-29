@@ -8,3 +8,4 @@ export const USER_LOGOUT = `${SERVER_HOST}/user/logout`;
 
 // article
 export const ARTICLE_WRITE = `${SERVER_HOST}/article`;
+export const ARTICLE_LIST = `${SERVER_HOST}/article`;
