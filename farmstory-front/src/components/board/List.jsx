@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import useCates from "../../hooks/useCates";
 import { getArticleAll } from "../../api/articleAPI";
+import Paging from "./Paging";
 
 const initState = {
   dtoList: [],
@@ -41,7 +42,8 @@ const List = () => {
 
     // 호출
     fetchData();
-  }, []);
+    //
+  }, [pg, cate2]); // 반응 변수(의존성 배열)가 변경되면 다시 useEffect 실행
 
   return (
     <div id="board">
@@ -80,23 +82,7 @@ const List = () => {
           ))}
         </table>
 
-        <div class="page">
-          <a href="#" class="prev">
-            이전
-          </a>
-          <a href="#" class="num current">
-            1
-          </a>
-          <a href="#" class="num">
-            2
-          </a>
-          <a href="#" class="num">
-            3
-          </a>
-          <a href="#" class="next">
-            다음
-          </a>
-        </div>
+        <Paging serverData={serverData} cate1={cate1} cate2={cate2} />
 
         <Link
           to={`/board/write?cate1=${cate1}&cate2=${cate2}`}
