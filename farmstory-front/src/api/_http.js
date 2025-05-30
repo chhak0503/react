@@ -13,3 +13,4 @@ export const ARTICLE_LIST = `${SERVER_HOST}/article`;
 // product
 export const PRODUCT_REGISTER = `${SERVER_HOST}/product`;
 export const PRODUCT_LIST = `${SERVER_HOST}/product`;
+export const PRODUCT_THUMB = `${SERVER_HOST}/product/thumb`;

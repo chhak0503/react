@@ -1,9 +1,9 @@
 import axios from "axios";
 import { PRODUCT_LIST, PRODUCT_REGISTER } from "./_http";
 
-export const getProductAll = async () => {
+export const getProductAll = async (pg) => {
   try {
-    const response = await axios.get(`${PRODUCT_LIST}`, {
+    const response = await axios.get(`${PRODUCT_LIST}?pg=${pg}`, {
       withCredentials: true,
     });
     console.log(response);

@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { Aside } from "../Aside";
 import { postProduct } from "../../../api/productAPI";
+import { useNavigate } from "react-router-dom";
 
 const initState = {
   productName: "",
@@ -14,6 +15,7 @@ const initState = {
 };
 
 export const Register = () => {
+  const navigate = useNavigate();
   const [product, setProduct] = useState({ ...initState });
 
   const refThumb120 = useRef();
@@ -51,6 +53,9 @@ export const Register = () => {
         // 상품 등록 요청
         const data = await postProduct(formData);
         console.log(data);
+
+        // 요청 후 다시 상품등록
+        navigate("/admin/product/register");
       } catch (err) {
         console.error(err);
       }
